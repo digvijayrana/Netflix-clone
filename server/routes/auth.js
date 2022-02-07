@@ -3,8 +3,6 @@ const User = require("../models/User");
 const bcrypt = require('bcryptjs')
 const jwt = require("jsonwebtoken");
 const {connectToDatabase} = require('../config/config');
-
-
 const JWT_SECRET = process.env.JWT_SECRET
 
 
@@ -12,7 +10,7 @@ const JWT_SECRET = process.env.JWT_SECRET
 router.post('/register', async (req, res) => {
 	try {
         await connectToDatabase()
-	const { username, password: plainTextPassword,email,phone} = req.body
+	const { username, password: plainTextPassword,email,phone,profilePic} = req.body
   if(phone.length<10 && phone.length>10){
     return res.json({ status: false, error: 'Invalid Phone' })
   }
