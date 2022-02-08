@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { login } from "../../authContext/apiCalls";
-import { AuthContext } from "../../authContext/AuthContext";
+import { login } from "../../autoContext/apiCalls";
+import { AuthContext } from "../../autoContext/authContext";
 import "./login.scss";
 
 export default function Login() {
