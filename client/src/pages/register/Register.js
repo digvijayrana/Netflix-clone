@@ -2,14 +2,14 @@
 import axios from "axios";
 import { useRef } from "react";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import "./register.scss";
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-  const history = useHistory();
+  // const history = useHistory();
 
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -24,7 +24,9 @@ export default function Register() {
     setUsername(usernameRef.current.value);
     try {
       await axios.post("auth/register", { email,username, password });
-      history.push("/login");
+      window.location ="/login";
+
+      // history.push("/login");
     } catch (err) {}
   };
   return (
